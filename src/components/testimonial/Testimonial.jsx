@@ -14,7 +14,7 @@ function Testimonial() {
 
         <p className="text-center sm:text-2xl text-xl">
           I had the pleasure of experiencing the next generation of card
-          solutions with this incredible product. It's refreshing to see such
+          solutions with this incredible product. Its refreshing to see such
           innovation in the financial industry.
         </p>
 
