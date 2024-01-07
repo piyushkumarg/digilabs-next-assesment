@@ -52,8 +52,6 @@ function LogoCloud() {
             <Image
               src={logo.logo}
               alt=''
-              layout="responsive"
-              objectFit="contain"
               width={100}
               height={100}
             />

@@ -36,7 +36,7 @@ function Feature() {
               key={item.id}
               className="flex flex-col gap-4 max-w-sm p-4 justify-center items-center  "
             >
-              <Image src={item.icon} alt="" height={100} width={100} />
+              <Image src={item.icon} alt="" height={30} width={30} />
               <p className="font-medium">{item.name}</p>
               <p className="text-center">{item.desc}</p>
             </div>
@@ -50,8 +50,8 @@ function Feature() {
           <Image
             src="./assets/feature/mobile.svg"
             alt=""
-            height={100}
-            width={100}
+            height={500}
+            width={500}
           />
           <div className="sm:py-28 py-14 sm:px-20 px-5 rounded-lg  bg-[#FAF9FF]">
             <div className="border-2 sm:px-7 sm:py-7 px-2 py-7 flex flex-col sm:gap-8 gap-4 bg-white border-[#C598FF] rounded-2xl relative ">
@@ -59,8 +59,8 @@ function Feature() {
                 <Image
                   src="./assets/feature/star.svg"
                   alt=""
-                  height={100}
-                  width={100}
+                  height={60}
+                  width={60}
                 />
               </div>
               <div>
@@ -69,16 +69,16 @@ function Feature() {
                   <Image
                     src="./assets/feature/expand.svg"
                     alt=""
-                    height={100}
-                    width={100}
+                    height={20}
+                    width={20}
                   />
                 </div>
                 <div className="flex  items-center gap-2 sm:text-xs text-[0.52rem]">
                   <Image
                     src="./assets/feature/wallet.svg"
                     alt=""
-                    height={100}
-                    width={100}
+                    height={15}
+                    width={15}
                   />
                   <p>9349 visa card</p>
                 </div>
@@ -108,8 +108,8 @@ function Feature() {
                   <Image
                     src="./assets/feature/label2.svg"
                     alt=""
-                    height={100}
-                    width={100}
+                    height={130}
+                    width={130}
                   />
                 </div>
                 <div>
