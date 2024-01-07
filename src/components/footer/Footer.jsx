@@ -77,7 +77,9 @@ function Footer() {
       </div>
       <div className="flex flex-wrap  sm:gap-16 gap-8 md:px-24 px-8  w-full">
         {footerItem.map((i) => (
-          <div className="flex flex-col gap-2 w-52 ">
+          <div 
+          key={i.id}
+          className="flex flex-col gap-2 w-52 ">
             <p className="font-bold pb-2">{i.name}</p>
             <p className="">{i.item1}</p>
             <p className="">{i.item2}</p>
@@ -89,7 +91,9 @@ function Footer() {
       <div className="flex flex-col sm:justify-center gap-8 sm:items-center justify-start py-16 px-8">
         <div className="flex gap-8">
           {socialItems.map((i) => (
-            <div className="flex">
+            <div 
+            key={i.id}
+            className="flex">
               <Image src={i.icon} width={30} height={30} alt="" />
             </div>
           ))}

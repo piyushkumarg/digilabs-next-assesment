@@ -32,7 +32,9 @@ function Feature() {
         <CommonFeature/>
         <div className="flex justify-center px-8 pt-24 gap-4 flex-wrap items-center">
           {featureItem.map((item) => (
-            <div className="flex flex-col gap-4 max-w-sm p-4 justify-center items-center  ">
+            <div 
+            key={item.id}
+            className="flex flex-col gap-4 max-w-sm p-4 justify-center items-center  ">
               <img src={item.icon} />
               <p className="font-medium">{item.name}</p>
               <p className="text-center">{item.desc}</p>
