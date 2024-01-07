@@ -2,7 +2,8 @@
 import Image from 'next/image';
 import React from 'react'
 
-
+import { motion } from "framer-motion";
+import { textVariants, logoVariants } from "../motionVariants/motionVariants";
 
 
 const logoCloudItem = [
@@ -43,21 +44,23 @@ const logoCloudItem = [
 function LogoCloud() {
   return (
     <div className="sm:p-8 p-2 ">
-      <div className="flex sm:gap-8 gap-4 items-center justify-center flex-wrap ">
-        {logoCloudItem.map((logo) => (
-          <div
+      <motion.div
+        variants={logoVariants}
+        initial="initial"
+        whileInView="animate"
+        className="flex sm:gap-8 gap-4 items-center justify-center flex-wrap "
+      >
+        {logoCloudItem.map((logo,i) => (
+          <motion.div
             key={logo.id}
+            variants={logoVariants}
+            custom={i}
             className="sm:w-auto w-16"
           >
-            <Image
-              src={logo.logo}
-              alt=''
-              width={100}
-              height={100}
-            />
-          </div>
+            <Image src={logo.logo} alt="" width={100} height={100} />
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 }

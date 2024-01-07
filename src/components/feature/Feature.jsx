@@ -1,6 +1,9 @@
+'use client'
 import React from "react";
 import Image from "next/image";
 import CommonFeature from "./CommonFeature";
+import { motion } from "framer-motion";
+import { textVariants, logoVariants } from "../motionVariants/motionVariants";
 
 
 const featureItem = [
@@ -31,15 +34,30 @@ function Feature() {
       <div className="flex flex-col justify-center items-center sm:px-20 px-4 pt-24 p">
         <CommonFeature />
         <div className="flex justify-center px-8 pt-24 gap-4 flex-wrap items-center">
-          {featureItem.map((item) => (
-            <div
+          {featureItem.map((item, i) => (
+            <motion.div
+              variants={logoVariants}
+              initial="initial"
+              whileInView="animate"
+              custom={i}
               key={item.id}
-              className="flex flex-col gap-4 max-w-sm p-4 justify-center items-center  "
             >
-              <Image src={item.icon} alt="" height={30} width={30} />
-              <p className="font-medium">{item.name}</p>
-              <p className="text-center">{item.desc}</p>
-            </div>
+              <motion.div
+                variants={textVariants}
+                initial="initial"
+                whileInView="animate"
+                custom={i}
+                className="flex flex-col gap-4 max-w-sm p-4 justify-center items-center  "
+              >
+                <Image src={item.icon} alt="" height={30} width={30} />
+                <motion.p variants={textVariants} className="font-medium">
+                  {item.name}
+                </motion.p>
+                <motion.p variants={textVariants} className="text-center">
+                  {item.desc}
+                </motion.p>
+              </motion.div>
+            </motion.div>
           ))}
         </div>
       </div>
@@ -47,14 +65,34 @@ function Feature() {
         {/* feature section 2 */}
         <CommonFeature />
         <div className="flex justify-center items-center gap-8  px-8 pt-24 flex-wrap">
-          <Image
-            src="./assets/feature/mobile.svg"
-            alt=""
-            height={500}
-            width={500}
-          />
-          <div className="sm:py-28 py-14 sm:px-20 px-5 rounded-lg  bg-[#FAF9FF]">
-            <div className="border-2 sm:px-7 sm:py-7 px-2 py-7 flex flex-col sm:gap-8 gap-4 bg-white border-[#C598FF] rounded-2xl relative ">
+          <motion.div
+            variants={logoVariants}
+            initial="initial"
+            whileInView="animate"
+            custom={1}
+          >
+            <Image
+              src="./assets/feature/mobile.svg"
+              alt=""
+              height={500}
+              width={500}
+            />
+          </motion.div>
+
+          <motion.div
+            variants={logoVariants}
+            initial="initial"
+            whileInView="animate"
+            custom={2}
+            className="sm:py-28 py-14 sm:px-20 px-5 rounded-lg  bg-[#FAF9FF]"
+          >
+            <motion.div
+              variants={textVariants}
+              initial="initial"
+              whileInView="animate"
+              
+              className="border-2 sm:px-7 sm:py-7 px-2 py-7 flex flex-col sm:gap-8 gap-4 bg-white border-[#C598FF] rounded-2xl relative "
+            >
               <div className="absolute top-[-5%] left-[-8%]">
                 <Image
                   src="./assets/feature/star.svg"
@@ -122,8 +160,8 @@ function Feature() {
                   />
                 </div>
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </div>
