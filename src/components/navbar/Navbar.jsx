@@ -3,6 +3,7 @@ import { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { ImCross } from "react-icons/im";
 import Image from "next/image";
+import Link from "next/link";
 
  const navigation = [
   { id: 1, name: "Card access", src: "#", icon: "" },
@@ -65,6 +66,7 @@ function Navbar() {
             </div>
           )}
         </div>
+
         <div className="flex gap-4 items-center justify-center">
           <button className="bg-[#E6E7E9] hover:bg-[#F1F1F2] px-4 py-1 rounded-xl flex gap-2 items-center">
             Login{" "}
@@ -78,6 +80,27 @@ function Navbar() {
           </button>
         </div>
       </nav>
+      <div className="flex justify-center items-center gap-4">
+        <Link
+          href="/"
+          className="bg-red-500 hover:bg-red-400 px-4 py-1 rounded-xl flex gap-2 items-center text-white text-lg font-medium"
+        >
+          Users Home
+        </Link>
+
+        <Link
+          href="/user"
+          className="bg-[#5e8ce8] hover:bg-[#444495] px-4 py-1 rounded-xl flex gap-2 items-center text-white text-lg font-medium"
+        >
+          Email
+        </Link>
+        <Link
+          href="/admin"
+          className="bg-red-500 hover:bg-red-400 px-4 py-1 rounded-xl flex gap-2 items-center text-white text-lg font-medium"
+        >
+          Admin
+        </Link>
+      </div>
     </>
   );
 }
