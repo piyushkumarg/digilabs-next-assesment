@@ -20,7 +20,7 @@ function User() {
       const response = await axios.post("/api/users", {
         email,
       });
-      console.log("Response from backend:", response.data);
+      // console.log("Response from backend:", response.data);
       setEmail("");
       setEmailError("");
       alert("Email Submitted");

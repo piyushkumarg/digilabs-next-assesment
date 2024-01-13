@@ -15,7 +15,7 @@ export const uploadToCloudinary = async (file) => {
         body: data,
       }
     );
-    console.log(res);
+    // console.log(res);
     const resData = await res.json();
 
     return resData?.url;

@@ -26,9 +26,9 @@ function Update() {
     fetchUpdatess();
   }, [updateForm]);
 
-  console.log(updates);
+  // console.log(updates);
 
-  console.log(updates[0]?._id);
+  // console.log(updates[0]?._id);
   const handleUpdate = async (id, logo, buttonText) => {
     try {
       await axios.put(`/api/updates/${id}`, {
@@ -61,11 +61,7 @@ function Update() {
     setIsLoading(true);
     const logoImgUrl = await uploadToCloudinary(updateForm?.logo);
     if (logoImgUrl) {
-      await handleUpdate(
-        "659cdecda5736e24bc4fba4c",
-        logoImgUrl,
-        updateForm?.buttonText
-      );
+      await handleUpdate(updates[0]?._id, logoImgUrl, updateForm?.buttonText);
 
       setIsLoading(false);
       alert("logo and text updated");
