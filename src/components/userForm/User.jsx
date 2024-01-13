@@ -15,12 +15,15 @@ function User() {
       setEmailError("Please enter a valid email address");
       return;
     }
-
+   
     try {
-      const response = await axios.post("/api/user", { email });
+      const response = await axios.post("/api/users", {
+        email,
+      });
       console.log("Response from backend:", response.data);
       setEmail("");
       setEmailError("");
+      alert("Email Submitted");
     } catch (error) {
       console.error("Error submitting data:", error);
     }

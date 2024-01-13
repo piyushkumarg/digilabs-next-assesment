@@ -1,5 +1,5 @@
-'use client'
-import React from 'react'
+"use client";
+import React from "react";
 import { motion } from "framer-motion";
 import { textVariants, logoVariants } from "../motionVariants/motionVariants";
 
@@ -39,7 +39,7 @@ export default function Details() {
         whileInView="animate"
         className="flex items-center justify-center gap-8 flex-wrap"
       >
-        {detailsItems.map((det,i) => (
+        {detailsItems.map((det, i) => (
           <motion.div
             variants={logoVariants}
             initial="initial"

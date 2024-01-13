@@ -1,10 +1,9 @@
-'use client'
+"use client";
 import React from "react";
 import Image from "next/image";
 import CommonFeature from "./CommonFeature";
 import { motion } from "framer-motion";
 import { textVariants, logoVariants } from "../motionVariants/motionVariants";
-
 
 const featureItem = [
   {
@@ -90,7 +89,6 @@ function Feature() {
               variants={textVariants}
               initial="initial"
               whileInView="animate"
-              
               className="border-2 sm:px-7 sm:py-7 px-2 py-7 flex flex-col sm:gap-8 gap-4 bg-white border-[#C598FF] rounded-2xl relative "
             >
               <div className="absolute top-[-5%] left-[-8%]">

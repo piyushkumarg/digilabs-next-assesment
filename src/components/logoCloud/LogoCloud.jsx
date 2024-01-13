@@ -1,10 +1,9 @@
-'use client'
-import Image from 'next/image';
-import React from 'react'
+"use client";
+import Image from "next/image";
+import React from "react";
 
 import { motion } from "framer-motion";
 import { textVariants, logoVariants } from "../motionVariants/motionVariants";
-
 
 const logoCloudItem = [
   {
@@ -50,14 +49,19 @@ function LogoCloud() {
         whileInView="animate"
         className="flex sm:gap-8 gap-4 items-center justify-center flex-wrap "
       >
-        {logoCloudItem.map((logo,i) => (
+        {logoCloudItem.map((logo, i) => (
           <motion.div
             key={logo.id}
             variants={logoVariants}
             custom={i}
             className="sm:w-auto w-16"
           >
-            <Image src={logo.logo} alt="" width={100} height={100} />
+            <Image
+              src={logo.logo}
+              alt=""
+              width={100}
+              height={100}
+            />
           </motion.div>
         ))}
       </motion.div>
@@ -65,4 +69,4 @@ function LogoCloud() {
   );
 }
 
-export default LogoCloud
+export default LogoCloud;

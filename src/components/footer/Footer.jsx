@@ -1,5 +1,6 @@
-import Image from 'next/image';
-import React from 'react'
+"use client";
+import Image from "next/image";
+import React from "react";
 
 const footerItem = [
   {
@@ -42,26 +43,25 @@ const footerItem = [
     item3: "Report",
     item4: "Refund",
   },
-  
 ];
 
 const socialItems = [
-    {
-        id:1,
-        name: "github",
-        icon: "./assets/footer/github.svg"
-    },
-    {
-        id:2,
-        name: "linkedin",
-        icon: "./assets/footer/linkedin.svg"
-    },
-    {
-        id:3,
-        name: "discord",
-        icon: "./assets/footer/discord.svg"
-    }
-]
+  {
+    id: 1,
+    name: "github",
+    icon: "./assets/footer/github.svg",
+  },
+  {
+    id: 2,
+    name: "linkedin",
+    icon: "./assets/footer/linkedin.svg",
+  },
+  {
+    id: 3,
+    name: "discord",
+    icon: "./assets/footer/discord.svg",
+  },
+];
 
 function Footer() {
   return (
@@ -77,9 +77,7 @@ function Footer() {
       </div>
       <div className="flex flex-wrap  sm:gap-16 gap-8 md:px-24 px-8  w-full">
         {footerItem.map((i) => (
-          <div 
-          key={i.id}
-          className="flex flex-col gap-2 w-52 ">
+          <div key={i.id} className="flex flex-col gap-2 w-52 ">
             <p className="font-bold pb-2">{i.name}</p>
             <p className="">{i.item1}</p>
             <p className="">{i.item2}</p>
@@ -91,9 +89,7 @@ function Footer() {
       <div className="flex flex-col sm:justify-center gap-8 sm:items-center justify-start py-16 px-8">
         <div className="flex gap-8">
           {socialItems.map((i) => (
-            <div 
-            key={i.id}
-            className="flex">
+            <div key={i.id} className="flex">
               <Image src={i.icon} width={30} height={30} alt="" />
             </div>
           ))}
@@ -106,4 +102,4 @@ function Footer() {
   );
 }
 
-export default Footer
+export default Footer;

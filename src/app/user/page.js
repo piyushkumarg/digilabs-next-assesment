@@ -1,5 +1,4 @@
-import React from 'react'
-import User from '@/components/user/User'
+import User from '@/components/userForm/User'
 
 export default function UserPage() {
   return (

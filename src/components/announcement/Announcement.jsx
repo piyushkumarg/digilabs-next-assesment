@@ -1,4 +1,5 @@
-import React from 'react'
+"use client";
+import React from "react";
 
 function Announcement() {
   return (
@@ -13,4 +14,4 @@ function Announcement() {
   );
 }
 
-export default Announcement
+export default Announcement;

@@ -1,11 +1,12 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { ImCross } from "react-icons/im";
 import Image from "next/image";
 import Link from "next/link";
+import axios from "axios";
 
- const navigation = [
+const navigation = [
   { id: 1, name: "Card access", src: "#", icon: "" },
   { id: 2, name: "Banking", src: "#", icon: "" },
   {
@@ -26,19 +27,33 @@ import Link from "next/link";
 
 function Navbar() {
   const [open, setOpen] = useState(false);
+  const [updates, setUpdates] = useState([]);
+
+  // Fetch all users
+  useEffect(() => {
+    const fetchUpdatess = async () => {
+      try {
+        const { data } = await axios.get("/api/updates");
+        setUpdates(data.updates || []);
+      } catch (error) {
+        console.error("Error fetching users:", error);
+      }
+    };
+    fetchUpdatess();
+  }, []);
 
   return (
     <>
       <nav className=" flex items-center justify-between h-[3.85rem]  lg:pl-16 lg:pr-16 pl-4 pr-4 ">
-        <div to="/" className=" font-bold font-carattere tracking-widest  ">
-          <Image
-            src="./assets/logo.svg"
-            alt=""
-            width={100}
-            height={100}
-            className=""
-          />
-        </div>
+      
+          <div
+            to="/"
+            className=" font-bold font-carattere tracking-widest  "
+           
+          >
+          { updates.length !==0 ? <Image src={updates[0].logo} alt="" width={100} height={100} className="" /> : <div>Loading...</div>}
+          </div>
+       
         {/* Desktop menu navigation */}
         <div className="lg:gap-4 gap-1 hidden md:flex">
           {navigation.map((nav) => (
