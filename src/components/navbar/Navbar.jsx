@@ -104,7 +104,7 @@ function Navbar() {
         </Link>
 
         <Link
-          href="/user"
+          href="/userForm"
           className="bg-[#5e8ce8] hover:bg-[#444495] px-4 py-1 rounded-xl flex gap-2 items-center text-white text-lg font-medium"
         >
           Email
